@@ -30,14 +30,28 @@ func testTimestamp( timestamp int64)  {
 	fmt.Printf("The year is %v, month is %v\n", year, month)
 }
 
-func main() {
-	ticker := time.Tick(time.Second)
-	for i := range ticker {
-		fmt.Printf("%v\n", i)
-		processTask()
-		testFormat()
+func testInterval()  {
+	start := time.Now().UnixNano()
+	for i := 0;i < 5; i++{
+		time.Sleep(time.Millisecond)
+		fmt.Printf("The i is %d\n",i)
 	}
+	end := time.Now().UnixNano()
+
+	cost := end - start
+	fmt.Printf("The cost is %v\n",cost/1000/1000)
+
+}
+
+func main() {
+	//ticker := time.Tick(time.Second)
+	//for i := range ticker {
+	//	fmt.Printf("%v\n", i)
+	//	processTask()
+	//	testFormat()
+	//}
 	//testTime()
-	timestamps := time.Now().Unix()
-	testTimestamp(timestamps)
+	//timestamps := time.Now().Unix()
+	//testTimestamp(timestamps)
+	testInterval()
 }

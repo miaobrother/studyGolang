@@ -24,7 +24,22 @@ func testNineNine() {
 	}
 }
 
+func testSwitchV1()  {
+	switch a:= 2;a {
+	case 1:
+		fmt.Printf("a=1\n")
+	case 2:
+		fmt.Printf("a=2\n")
+	case 3:
+		fmt.Printf("a=3\n")
+	default:
+		fmt.Printf("The default")
+	}
+
+}
+
 func main() {
 	testSwitch()
-	testNineNine()
+	testSwitchV1()
+	//testNineNine()
 }
